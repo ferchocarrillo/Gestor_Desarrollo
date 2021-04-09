@@ -96,23 +96,23 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
         <div id="intro">
             <div class="container">
                 <div class="row centered">
-                    <h1>{{ trans('adminlte_lang::message.designed') }}</h1>
+                    <h1 class="mensaje2">{{ trans('adminlte_lang::message.designed') }}</h1>
                     <br>
                     <br>
                     <div class="col-lg-4">
-                        <img src="{{ asset('/img/intro01.png') }}" alt="">
-                        <h3>{{ trans('adminlte_lang::message.community') }}</h3>
-                        <p>{{ trans('adminlte_lang::message.see') }} <a href="https://github.com/acacha/adminlte-laravel">{{ trans('adminlte_lang::message.githubproject') }}</a>, {{ trans('adminlte_lang::message.post') }} <a href="https://github.com/acacha/adminlte-laravel/issues">{{ trans('adminlte_lang::message.issues') }}</a> {{ trans('adminlte_lang::message.and') }} <a href="https://github.com/acacha/adminlte-laravel/pulls">{{ trans('adminlte_lang::message.pullrequests') }}</a></p>
+                        <img src="{{ asset('img\1.gif') }}" alt="" width="250px">
+                        <h3 class="mensaje1">{{ trans('adminlte_lang::message.community') }}</h3>
+                        <p class="parrafo1"> <a href="#footerwrap">{{ trans('adminlte_lang::message.githubproject') }}</a>, Trabajaremos juntos</a></p>
                     </div>
                     <div class="col-lg-4">
-                        <img src="{{ asset('/img/intro02.png') }}" alt="">
-                        <h3>{{ trans('adminlte_lang::message.schedule') }}</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <img src="{{ asset('/img/2.gif') }}" alt="" width="250px">
+                        <h3  class="mensaje1" >{{ trans('adminlte_lang::message.schedule') }}</h3>
+                        <p class="parrafo1">Cuentanos tus ideas, Las haremos realidad!!</p>
                     </div>
                     <div class="col-lg-4">
-                        <img src="{{ asset('/img/intro03.png') }}" alt="">
-                        <h3>{{ trans('adminlte_lang::message.monitoring') }}</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <img src="{{ asset('img\light_ai_design_by_gleb.gif') }}" alt="" height="250"  width="350px">
+                        <h3 class="mensaje1">{{ trans('adminlte_lang::message.monitoring') }}</h3>
+                        <p class="parrafo1">Transformando nuestro negocio con el diseño de productos y servicios.</p>
                     </div>
                 </div>
                 <br>
@@ -239,13 +239,21 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
         <div id="footerwrap">
             <div class="container">
                 <div class="col-lg-5">
-                    <h3>{{ trans('adminlte_lang::message.address') }}</h3>
+                   <strong><h3>{{ trans('adminlte_lang::message.address') }}</h3></strong>
                     <p>
-                        Av. Greenville 987,<br/>
-                        New York,<br/>
-                        90873<br/>
-                        United States
+                      <strong>Sede Niza,<br/></strong>
+                        Av Suba # 127D - 61<br/>
+                        Bogota<br/>
+                        Colombia
                     </p>
+
+                    <p>
+                       <strong> Sede Santa María del Lago,<br/></strong>
+                        Carrera 73 A # 77 A - 44<br/>
+                        Bogota<br/>
+                        Colombia
+                    </p>
+
                 </div>
 
                 <div class="col-lg-7">
