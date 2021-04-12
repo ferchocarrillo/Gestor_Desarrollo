@@ -45,16 +45,19 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><b></b></a>
+                <a class="navbar-brand" href="#home"><b>Inicio</b></a>
+                <a href="#desc" class="navbar-brand">{{ trans('adminlte_lang::message.description') }}<b></b></a>
+                <a href="#showcase" class="navbar-brand">{{ trans('adminlte_lang::message.showcase') }}<b></b></a>
+                <a href="#contact"  class="navbar-brand">{{ trans('adminlte_lang::message.contact') }}<b></b> </a>
+
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
 
 
-                    <li class="active"><a href="#home" class="smoothScroll">{{ trans('adminlte_lang::message.home') }}</a></li>
-                    <li><a href="#desc" class="smoothScroll">{{ trans('adminlte_lang::message.description') }}</a></li>
-                    <li><a href="#showcase" class="smoothScroll">{{ trans('adminlte_lang::message.showcase') }}</a></li>
-                    <li><a href="#contact" class="smoothScroll">{{ trans('adminlte_lang::message.contact') }}</a></li>
+
+
+
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::guest())
@@ -74,7 +77,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
             <div class="container">
                 <div class="row centered">
                     <div class="col-lg-12">
-                        <h1>Gestor <b><a href="#">Area de Desarrollo</a></b></h1>
+                        <h1  >Gestor <b><a href="#">Area de Desarrollo</a></b></h1>
                         <h3> <a href="https://mentius.com.co/"><img src="img\isotipo-slogan.png" alt="logo mentius" width="15%"></a> {{ trans('adminlte_lang::message.laravelpackage') }}
                            </h3>
 
@@ -116,7 +119,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                     </div>
                 </div>
                 <br>
-                <hr>
+
             </div> <!--/ .container -->
         </div><!--/ #introwrap -->
 
@@ -124,15 +127,15 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
         <div id="features">
             <div class="container">
                 <div class="row">
-                    <h1 class="centered">{{ trans('adminlte_lang::message.whatnew') }}</h1>
+                    <h1 class="mensaje3">{{ trans('adminlte_lang::message.whatnew') }}</h1>
                     <br>
                     <br>
                     <div class="col-lg-6 centered">
-                        <img class="centered" src="{{ asset('/img/mobile.png') }}" alt="">
+                        <img class="centered" src="{{ asset('/img/14.gif') }}" alt="" style="border-radius:3em">
                     </div>
 
                     <div class="col-lg-6">
-                        <h3>{{ trans('adminlte_lang::message.features') }}</h3>
+                        <h3 class="mensaje1">{{ trans('adminlte_lang::message.features') }}</h3>
                         <br>
                         <!-- ACCORDION -->
                         <div class="accordion ac" id="accordion2">
@@ -144,7 +147,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                                 </div><!-- /accordion-heading -->
                                 <div id="collapseOne" class="accordion-body collapse in">
                                     <div class="accordion-inner">
-                                        <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <p class="parrafo1" >Nuestra labor mas importante, es la de crear soluciones para todos los involucrados en la industia, haciendo de nuestra empresa la proveedora de mejoras a todo nivel.</p>
                                     </div><!-- /accordion-inner -->
                                 </div><!-- /collapse -->
                             </div><!-- /accordion-group -->
@@ -158,7 +161,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                                 </div>
                                 <div id="collapseTwo" class="accordion-body collapse">
                                     <div class="accordion-inner">
-                                        <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <p>Siempre atentos a las mejoras que apliquen a nuestra industria, para hacerlas realidad, creando nuestras propias soluciones.</p>
                                     </div><!-- /accordion-inner -->
                                 </div><!-- /collapse -->
                             </div><!-- /accordion-group -->
@@ -172,7 +175,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                                 </div>
                                 <div id="collapseThree" class="accordion-body collapse">
                                     <div class="accordion-inner">
-                                        <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <p>Atendemos las necesidades de la empresa asi como las de nuestros clientes, encamiados al crecimiento de todos.</p>
                                     </div><!-- /accordion-inner -->
                                 </div><!-- /collapse -->
                             </div><!-- /accordion-group -->
@@ -186,7 +189,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                                 </div>
                                 <div id="collapseFour" class="accordion-body collapse">
                                     <div class="accordion-inner">
-                                        <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <p>El futuro de las tecnologias aplicadas el negocio, mejoramos los procesos de modernizacion tecnoligica, supernando el rezago respecto al mundo en general.</p>
                                     </div><!-- /accordion-inner -->
                                 </div><!-- /collapse -->
                             </div><!-- /accordion-group -->
@@ -202,7 +205,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
         <div id="showcase">
             <div class="container">
                 <div class="row">
-                    <h1 class="centered">{{ trans('adminlte_lang::message.screenshots') }}</h1>
+                    <h1 class="mensaje3">{{ trans('adminlte_lang::message.screenshots') }}</h1>
                     <br>
                     <div class="col-lg-8 col-lg-offset-2">
                         <div id="carousel-example-generic" class="carousel slide">
@@ -216,13 +219,13 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img src="{{ asset('/img/item-01.png') }}" alt="">
+                                    <a href="http://192.168.3.209/"><img src="{{ asset('/img/desarrollo1.png') }}" alt=""></a>
                                 </div>
                                 <div class="item">
-                                    <img src="{{ asset('/img/item-02.png') }}" alt="">
+                                    <a href="http://192.168.3.201/"><img src="{{ asset('/img/desarrrollo2.png') }}" alt=""></a>
                                 </div>
                                 <div class="item">
-                                   <a href="http://192.168.3.201/"><img src="{{ asset('/img/iso.png') }}" alt="" width="50%" ></a>
+                                   <a href="http://192.168.3.213/"><img src="{{ asset('/img/desarrollo3.png') }}" alt=""  ></a>
                                 </div>
                             </div>
                         </div>
@@ -259,19 +262,23 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                 <div class="col-lg-7">
                     <h3>{{ trans('adminlte_lang::message.dropus') }}</h3>
                     <br>
-                    <form role="form" action="#" method="post" enctype="plain">
+                    <form role="form" action="{{ url('/landing')}}" method="post" enctype="plain">
+                        {{csrf_field()}}
                         <div class="form-group">
-                            <label for="name1">{{ trans('adminlte_lang::message.yourname') }}</label>
-                            <input type="name" name="Name" class="form-control" id="name1" placeholder="{{ trans('adminlte_lang::message.yourname') }}">
+                            <label for="nombre">{{ trans('adminlte_lang::message.yourname') }}</label>
+                            <input type="text" name="nombre" class="form-control" id="nombre" placeholder="{{ trans('adminlte_lang::message.yourname') }}">
                         </div>
                         <div class="form-group">
-                            <label for="email1">{{ trans('adminlte_lang::message.emailaddress') }}</label>
-                            <input type="email" name="Mail" class="form-control" id="email1" placeholder="{{ trans('adminlte_lang::message.enteremail') }}">
+                            <label for="correo">{{ trans('adminlte_lang::message.emailaddress') }}</label>
+                            <input type="mail" name="correo" class="form-control" id="correo" placeholder="{{ trans('adminlte_lang::message.enteremail') }}">
                         </div>
                         <div class="form-group">
                             <label>{{ trans('adminlte_lang::message.yourtext') }}</label>
-                            <textarea class="form-control" name="Message" rows="3"></textarea>
+                            <textarea class="form-control"  id="sugerencia" name="sugerencia" rows="3"></textarea>
                         </div>
+                        <br>
+                        <input type="checkbox" class="form-check-input" id="conditions" name="conditions" value="1" required>
+                        <label class="form-check-label" for="conditions">Aceptar <a href="/politica">Condiciones de uso</a></label>
                         <br>
                         <button type="submit" class="btn btn-large btn-success">{{ trans('adminlte_lang::message.submit') }}</button>
                     </form>
@@ -279,6 +286,9 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
             </div>
         </div>
     </section>
+
+    <canvas></canvas>
+
     <footer>
         <div id="c">
             <div class="container">
@@ -306,5 +316,139 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
         interval: 3500
     })
 </script>
+
+<script>// Soltar chispas al rebotar, no crear estrellas con set timeout
+    var canvas = document.querySelector("canvas"),
+        c = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    var unAltura = canvas.height/8,
+        unAncho = canvas.width/8;
+
+
+    function crearFondo(){
+      c.shadowBlur = 0;
+      c.fillStyle = "rgba(0, 0, 0, .4)";
+      c.fillRect(0, 0, canvas.width, canvas.height);
+
+      c.fillStyle="rgb(42,71,87)";
+      c.beginPath();
+      c.moveTo(0, unAltura * 6);
+      c.lineTo(unAncho * 4, unAltura * 0.7);
+      c.lineTo(unAncho * 8, unAltura * 6);
+      c.lineTo(0, unAltura * 6);
+      c.fill();
+      c.closePath();
+
+      c.fillStyle ="rgb(32,55,67)";
+      c.beginPath();
+      c.moveTo(0, unAltura * 8);
+      c.lineTo(0, unAltura * 5);
+      c.lineTo(unAncho * 1.5, unAltura * 2);
+      c.lineTo(unAncho * 4, unAltura * 6);
+      c.lineTo(unAncho * 6.5, unAltura * 2);
+      c.lineTo(unAncho*8 , unAltura * 5);
+      c.lineTo(unAncho*8, unAltura * 8);
+      c.lineTo(0, unAltura * 8 );
+      c.fill();
+      c.closePath();
+
+      c.fillStyle="rgb(26,44,54)";
+      c.beginPath();
+      c.moveTo(0, unAltura * 8);
+      c.lineTo(0, unAltura * 6);
+      c.lineTo(unAncho*1.3, unAltura *4);
+      c.lineTo(unAncho*2.6, unAltura * 6);
+      c.lineTo(unAncho*3.9, unAltura *4);
+      c.lineTo(unAncho*5.2, unAltura * 6);
+      c.lineTo(unAncho*6.5, unAltura *4);
+      c.lineTo(unAncho*8, unAltura * 6);
+      c.lineTo(unAncho*8, unAltura *8);
+      c.fill();
+    };
+
+
+    // Propiedades fijas
+    var velInicialX = 3,
+        velInicialY = 0.1,
+        cocienteRebote = 0.6,
+        gravedad = 0.1,
+        estrellas ={},
+        indiceEstrellas = 0;
+
+    function Estrella(){
+      this.radio = 5 + (Math.random() * 10);
+      this.inicialX = this.radio + (Math.random() * (canvas.width - (this.radio*2)));
+      this.inicialY = -100 + (Math.random() * - 500);
+      this.x = this.inicialX;
+      this.y = this.inicialY;
+      this.velX = velInicialX;
+      this.velY = velInicialY;
+      this.life = 0;
+      this.maxLife = 4;
+      indiceEstrellas++;
+      estrellas[indiceEstrellas] = this;
+      this.id = indiceEstrellas;
+    };
+
+    Estrella.prototype.actualizar = function (){
+
+      // Tiempo de vida
+      if (this.life >= this.maxLife || this.radio <1.5){
+          delete estrellas[this.id];
+      }
+
+      // Rebote en las paredes
+      if (this.x + this.velX > canvas.width- this.radio ||
+          this.x + this.velX < this.radio){
+        this.velX = -this.velX;
+      }
+
+      // Rebote en el suelo
+      if (this.y + this.velY + this.radio > canvas.height ){
+        this.velY = - this.velY * cocienteRebote;
+        this.velX = this.velX * (cocienteRebote + 0.3);
+        this.radio = this.radio * cocienteRebote;
+        this.life++;
+        // Llamar a funcion que suelte chispas
+        for (var i = Math.round(Math.random() * 6); i<7; i++){
+          // new Chispas(this.x, this.y);
+        }
+      }
+
+      this.x += this.velX;
+      this.y += this.velY;
+      this.velY += gravedad;
+    };
+
+    Estrella.prototype.dibujar = function (){/*sombra de cada bola*/
+      c.beginPath();
+      c.fillStyle="white";
+      c.shadowBlur = 20;
+      c.shadowColor = "white";
+      c.arc(this.x,this.y, this.radio, 0, Math.PI * 2, false);
+      c.fill();
+      this.actualizar();
+    }
+
+    function Chispas(inicialX, inicialY){
+      this.x = inicialX;
+      this.y = inicialY;
+    };
+
+
+    setInterval(()=>{new Estrella()}, 2000);
+
+    function animacion (){
+      crearFondo();
+      for (var i in estrellas){
+        estrellas[i].dibujar();
+      }
+      requestAnimationFrame(animacion);
+      // console.table(estrellas);
+    }
+    animacion();
+    </script>
 </body>
 </html>

@@ -1,45 +1,90 @@
 @extends('adminlte::layouts.auth')
 
 @section('htmlheader_title')
-    Register
+    Log in
 @endsection
 
-@section('content')
+<link rel="stylesheet" href="css/style.css">
 
-<body class="hold-transition register-page">
-    <div id="app" v-cloak>
-        <div class="register-box">
-            <div class="register-logo">
-                <a href="{{ url('/home') }}"><b>Admin</b>LTE</a>
+@section('content')
+<div class="container">
+
+    <div class="login-logo">
+        <br><br>
+        <a href="{{ url('/home') }}"><img src="\img\isotipo-slogan.png" alt="" width="30%"></a>
+    </div><!-- /.login-logo -->
+
+<div>
+
+            <div class="cardLogin">
+                <div class="card-header">{{ __('Logueo') }}</div>
+
+                <div class="card-body">
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
+
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Correo Electronico') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-6 offset-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                                    <label class="form-check-label" for="remember">
+                                        {{ __('Recordar contraseña') }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-8 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Loguear') }}
+                                </button>
+
+                                @if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Olvido su contraseña?') }}
+                                    </a>
+                                @endif
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
             </div>
 
-            @if (count($errors) > 0)
-                <div class="alert alert-danger">
-                    <strong>Whoops!</strong> {{ trans('adminlte_lang::message.someproblems') }}<br><br>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-
-            <div class="register-box-body">
-                <p class="login-box-msg">{{ trans('adminlte_lang::message.registermember') }}</p>
-
-                <register-form></register-form>
-
-                @include('adminlte::auth.partials.social_login')
-
-                <a href="{{ url('/login') }}" class="text-center">{{ trans('adminlte_lang::message.membership') }}</a>
-            </div><!-- /.form-box -->
-        </div><!-- /.register-box -->
     </div>
+</div>
 
-    @include('adminlte::layouts.partials.scripts_auth')
 
-    @include('adminlte::auth.terms')
-
-</body>
 
 @endsection

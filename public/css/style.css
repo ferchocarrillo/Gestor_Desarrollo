@@ -1,0 +1,32 @@
+.card-header{
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+font-size: xx-large;
+color: rgb(255, 255, 255);
+text-align: center;
+padding-bottom: 1.70em;
+}
+.cardLogin{
+
+padding: 3em 0em 1em 3em;
+text-align: justify;
+background-image: url('../img/luz.gif');
+border-radius: 0.75em;
+width: 50%;
+margin-left: 20em;
+color: ivory;
+}
+
+.btn.btn-link{
+color:rgb(255, 255, 255);
+font-size: 15px;
+}
+.input_text{
+    font-size: 15px;
+    border-radius: 0.75em;
+    border-color: none;
+    margin-left: 10rem;
+    padding-left: 2rem;
+}
+
+
+

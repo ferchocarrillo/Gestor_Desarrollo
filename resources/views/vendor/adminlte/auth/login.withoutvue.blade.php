@@ -4,75 +4,87 @@
     Log in
 @endsection
 
+<link rel="stylesheet" href="css/style.css">
+
 @section('content')
-    <body class="hold-transition login-page">
-    <div id="app" v-cloak>
-        <div class="login-box">
-            <div class="login-logo">
-                <a href="{{ url('/home') }}"><b>Admin</b>LTE</a>
-            </div><!-- /.login-logo -->
+<div class="container">
 
-            @if (count($errors) > 0)
-                <div class="alert alert-danger">
-                    <strong>Whoops!</strong> {{ trans('adminlte_lang::message.someproblems') }}<br><br>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+    <div class="login-logo">
+        <br><br>
+        <a href="{{ url('/home') }}"><img src="\img\isotipo-slogan.png" alt="" width="30%"></a>
+    </div><!-- /.login-logo -->
 
-            <div class="login-box-body">
-                <p class="login-box-msg"> {{ trans('adminlte_lang::message.siginsession') }} </p>
-                <form action="{{ url('/login') }}" method="post">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <login-input-field
-                            name="{{ config('auth.providers.users.field','email') }}"
-                            domain="{{ config('auth.defaults.domain','') }}"
-                    ></login-input-field>
-                    {{--<div class="form-group has-feedback">--}}
-                    {{--<input type="email" class="form-control" placeholder="{{ trans('adminlte_lang::message.email') }}" name="email"/>--}}
-                    {{--<span class="glyphicon glyphicon-envelope form-control-feedback"></span>--}}
-                    {{--</div>--}}
-                    <div class="form-group has-feedback">
-                        <input type="password" class="form-control" placeholder="{{ trans('adminlte_lang::message.password') }}" name="password"/>
-                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-8">
-                            <div class="checkbox icheck">
-                                <label>
-                                    <input style="display:none;" type="checkbox" name="remember"> {{ trans('adminlte_lang::message.remember') }}
-                                </label>
+<div>
+
+            <div class="cardLogin">
+                <div class="card-header">{{ __('Logueo') }}</div>
+
+                <div class="card-body">
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
+
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Correo Electronico') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
-                        </div><!-- /.col -->
-                        <div class="col-xs-4">
-                            <button type="submit" class="btn btn-primary btn-block btn-flat">{{ trans('adminlte_lang::message.buttonsign') }}</button>
-                        </div><!-- /.col -->
-                    </div>
-                </form>
+                        </div>
 
-                @include('adminlte::auth.partials.social_login')
 
-                <a href="{{ url('/password/reset') }}">{{ trans('adminlte_lang::message.forgotpassword') }}</a><br>
-                <a href="{{ url('/register') }}" class="text-center">{{ trans('adminlte_lang::message.registermember') }}</a>
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
 
-            </div><!-- /.login-box-body -->
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
-        </div><!-- /.login-box -->
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-6 offset-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                                    <label class="form-check-label" for="remember">
+                                        {{ __('Recordar contraseña') }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-8 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Loguear') }}
+                                </button>
+
+                                @if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Olvido su contraseña?') }}
+                                    </a>
+                                @endif
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
     </div>
-    @include('adminlte::layouts.partials.scripts_auth')
+</div>
 
-    <script>
-      $(function () {
-        $('input').iCheck({
-          checkboxClass: 'icheckbox_square-blue',
-          radioClass: 'iradio_square-blue',
-          increaseArea: '20%' // optional
-        });
-      });
-    </script>
-    </body>
+
 
 @endsection
